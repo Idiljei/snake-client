@@ -13,6 +13,7 @@ const connect = function() {
   });  
   conn.on('connect', () => { //you as a client sent the message
     conn.write('Name: IAJ') //sending it to server 
+    conn.write('Move: up') 
   });  
   // this is telling client what to// in this case console.log
 
