@@ -8,10 +8,14 @@ const connect = function() {
   });
   // interpret incoming data as text
   conn.setEncoding('utf8'); 
-  conn.on('data', (data) => {
-    console.log('Server says: ', data); 
+  conn.on('data', (data) => { //recieved message as a client 
+    console.log(data,'wow server, you gonna play me like that?'); 
+  });  
+  conn.on('connect', () => { //you as a client sent the message
+    conn.write('Name: IAJ') //sending it to server 
   });  
   // this is telling client what to// in this case console.log
+
   return conn;
 }
 
