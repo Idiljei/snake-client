@@ -1,9 +1,11 @@
 const net = require('net');  
 
+const { IP, PORT } = require('./constants')
+
 const connect = function() {
   const conn = net.createConnection({  //create connection from net library
-    host: '135.23.222.131',
-    port: 50542
+    host: IP,
+    port: PORT,
 
   });
   // interpret incoming data as text
@@ -22,3 +24,5 @@ const connect = function() {
 
 
   module.exports = {connect};
+
+  
